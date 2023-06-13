@@ -1,53 +1,74 @@
 # CPUScheduling
-A java program to simulate the following schedulers:  
-  
-1. preemptive Shortest- Job First (SJF) Scheduling with context switching
-2. Round Robin (RR) with context switching
-3. preemptive Priority Scheduling (with the solving of starvation problem)
-4. AG Scheduling :
- 
-    a. Each process is provided a static time to execute called quantum.  
-    b. Once a process is executed for given time period, it’s called FCFS till the  
-    finishing of (ceil(52%)) of its Quantum time then it’s converted to non-  
-    preemptive Priority till the finishing of the next (ceil(52%)), after that it’s  
-    converted to preemptive Shortest- Job First (SJF).    
-    c. We have 3 scenarios of the running process  
-        i. The running process used all its quantum time and it still have job to  
-        do (add this process to the end of the queue, then increases its  
-        Quantum time by Two).  
-        ii. The running process was execute as non-preemptive Priority and  
-        didn’t use all its quantum time based on another process converted  
-        from ready to running (add this process to the end of the queue, and  
-        then increase its Quantum time by ceil(the remaining Quantum  
-        time/2) ).  
-        iii. The running process was execute as preemptive Shortest- Job First  
-        (SJF) and didn’t use all its quantum time based on another process  
-        converted from ready to running (add this process to the end of the  
-        queue, and then increase its Quantum time by the remaining  
-        Quantum time).  
-        iv. The running process didn’t use all of its quantum time because it’s no  
-        longer need that time and the job was completed (set it’s quantum  
-        time to zero).  
-          
-      
-Program Input:    
-  
- 1. Number of processes  
- 2. Round robin Time Quantum  
- 3. Context switching  
-     
-For Each Process you need to receive the following parameters from the user:  
-  
- 1. Process Name  
- 2. Process Arrival Time  
- 3. Process Burst Time  
- 4. Process Priority 
-   
-Program Output: </br>
-For each scheduler output the following:  
- 1. Processes execution order  
- 2. Waiting Time for each process  
- 3. Turnaround Time for each process  
- 4. Average Waiting Time  
- 5. Average Turnaround Time  
- 6. Print all history update of quantum time for each process (AG Scheduling))  
+<html>
+<body>
+  <p>
+    This Java program simulates different schedulers. It provides simulations for the following schedulers:
+  </p>
+  <ol>
+    <li>
+      Preemptive Shortest-Job First (SJF) Scheduling with context switching.
+    </li>
+    <li>
+      Round Robin (RR) with context switching.
+    </li>
+    <li>
+      Preemptive Priority Scheduling with the solution to the starvation problem.
+    </li>
+    <li>
+      AG Scheduling:
+      <ul>
+        <li>
+          Each process is provided with a static time to execute called quantum.
+        </li>
+        <li>
+          Once a process is executed for the given time period, it is treated as FCFS (First-Come, First-Served) until it finishes ceil(52%) of its quantum time. Then it is converted to non-preemptive Priority until it finishes the next ceil(52%) of its quantum time. After that, it is converted to preemptive Shortest-Job First (SJF).
+        </li>
+        <li>
+          There are 3 scenarios for the running process:
+          <ol type="i">
+            <li>
+              The running process used all its quantum time and still has more job to do. In this case, the process is added to the end of the queue, and its quantum time is increased by two.
+            </li>
+            <li>
+              The running process was executed as non-preemptive Priority and did not use all its quantum time because another process was converted from ready to running. In this case, the process is added to the end of the queue, and its quantum time is increased by ceil(the remaining quantum time/2).
+            </li>
+            <li>
+              The running process was executed as preemptive Shortest-Job First (SJF) and did not use all its quantum time because another process was converted from ready to running. In this case, the process is added to the end of the queue, and its quantum time is increased by the remaining quantum time.
+            </li>
+            <li>
+              The running process did not use all of its quantum time because it no longer needs that time and the job was completed. In this case, the process's quantum time is set to zero.
+            </li>
+          </ol>
+        </li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2>Program Input</h2>
+  <p>The program expects the following input:</p>
+  <ol>
+    <li>Number of processes</li>
+    <li>Round robin time quantum</li>
+    <li>Context switching</li>
+  </ol>
+  <p>For each process, the following parameters are required:</p>
+  <ol>
+    <li>Process Name</li>
+    <li>Process Arrival Time</li>
+    <li>Process Burst Time</li>
+    <li>Process Priority</li>
+  </ol>
+
+  <h2>Program Output</h2>
+  <p>For each scheduler, the program outputs the following:</p>
+  <ol>
+    <li>Processes execution order</li>
+    <li>Waiting time for each process</li>
+    <li>Turnaround time for each process</li>
+    <li>Average waiting time</li>
+    <li>Average turnaround time</li>
+    <li>All history updates of quantum time for each process (AG Scheduling)</li>
+  </ol>
+
+</body>
+</html>
